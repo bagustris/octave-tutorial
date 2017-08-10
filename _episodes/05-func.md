@@ -3,9 +3,9 @@ title: Creating Functions
 teaching: 30
 exercises: 0
 questions:
-- "How can I teach MATLAB how to do new things?"
+- "How can I teach Octave how to do new things?"
 objectives:
-- "Compare and contrast MATLAB function files with MATLAB scripts."
+- "Compare and contrast Octave function files with Octave scripts."
 - "Define a function that takes parameters."
 - "Test a function."
 - "Recognize why we should divide programs into small, single-purpose functions."
@@ -34,7 +34,7 @@ end
 ~~~
 {: .matlab}
 
-A Matlab function *must* be saved in a text file with a `.m` extension.
+An Octave function *must* be saved in a text file with a `.m` extension.
 The name of that file must be the same as the function defined
 inside it. The name must start with a letter and cannot contain spaces.
 So, you will need to save the above code in a file called
@@ -59,14 +59,14 @@ a file containing a function has to be placed in a directory that
 MATLAB knows  about. The most convenient of those directories is the
 current working directory.
 
-> ## GNU Octave
+> ## GNU Octave - Matlab compatibility
 >
 > In common with MATLAB, Octave searches the current working directory and
 > the path for functions called from the command line.
 {: .callout}
 
 We can call our function from the command line
-like any other MATLAB function:
+like any other Octave function:
 
 ~~~
 fahr_to_kelvin(32)
@@ -151,7 +151,7 @@ or the next person who reads it won't be able to understand what's going on.
 
 > ## Concatenating in a Function
 >
-> In Matlab, we concatenate strings by putting them into an array or using the
+> In Octave, we concatenate strings by putting them into an array or using the
 > `strcat` function:
 >
 > ~~~
