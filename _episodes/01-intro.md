@@ -5,15 +5,15 @@ exercises: 0
 questions:
 - "How can I process and visualize my data?"
 objectives:
-- "Navigate among important sections of the MATLAB environment."
-- "Identify what kind of data is stored in MATLAB arrays."
+- "Navigate among important sections of the Octave environment."
+- "Identify what kind of data is stored in Octave arrays."
 - "Read tabular data from a file into a program."
 - "Assign values to variables."
 - "Select individual values and subsections from data."
 - "Perform operations on arrays of data."
 - "Display simple graphs."
 keypoints:
-- "MATLAB stores data in arrays."
+- "Octave stores data in arrays."
 - "Use `csvread` to read tabular CSV data into a program."
 - "Use `plot` to visualize data."
 ---
@@ -45,18 +45,18 @@ We want to:
 To do all that, we'll have to learn a little bit about programming.
 
 We have a dozen datasets that need analysis, stored as `.csv` files -
-but MATLAB doesn't know about these files yet.
-The first thing we need to do is set MATLAB's
+but Octave doesn't know about these files yet.
+The first thing we need to do is set Octave's
 [path](../reference/index.html#matlab-path)
-to include the directory containing the files. The MATLAB path is a list of directories
-on your computer that MATLAB knows about.
+to include the directory containing the files. The Octave path is a list of directories
+on your computer that Octave knows about.
 To do this,
 we go to the `Home` tab,
 click on `Set Path`,
 and then on `Add with Subfolders...`.
 We navigate to the directory containing our files and
-add it to the path to tell MATLAB where to look for our files. When you refer
-to a file (either code or data), MATLAB will search all the directories in the path
+add it to the path to tell Octave where to look for our files. When you refer
+to a file (either code or data), Octave will search all the directories in the path
 to find it. Alternatively, for data files, we can also provide the relative or
 absolute file path.
 
@@ -67,8 +67,8 @@ absolute file path.
 > `addpath('path/to/directory')`
 {: .callout}
 
-Before we can start programming, we need to know a little about the MATLAB interface.
-Using the default setup, the MATLAB desktop contains several important sections:
+Before we can start programming, we need to know a little about the Octave interface.
+Using the default setup, the Octave desktop contains several important sections:
 
 * In the **Command Window** or shell we can run and debug our code.
 Everything that's typed into the command window is executed immediately.
@@ -76,7 +76,7 @@ Everything that's typed into the command window is executed immediately.
 The upside of this is that
 we can save our code and run it again in the same way at a later stage.
 
-* **Search Documentation** on the top right of your screen lets you search for functions.
+* **Search Documentation** on can be triggered by Ctrl+5 tp your screen lets you search for functions.
 Suggestions for functions that would do what you want to do will pop up.
 Clicking on them will open the documentation.
 
@@ -84,19 +84,19 @@ Reading data from files and writing data to them
 are essential tasks in scientific computing,
 and admittedly,
 something that we'd rather not spend a lot of time thinking about.
-Fortunately, MATLAB comes with a number of high-level tools to do these things efficiently,
+Fortunately, Octave comes with a number of high-level tools to do these things efficiently,
 sparing us the grisly detail.
 
 If we know what our data looks like (in this case, we have comma-separated values)
 and we're unsure about what command we want to use,
 we can search the documentation.
-Type `read csv` into the documentation toolbar.
-MATLAB suggests using `csvread`.
+Type `csv` and tab into the documentation toolbar.
+Octave suggests using `csvread`.
 If we have a closer look at the documentation,
-MATLAB also tells us, which in- and output arguments this function has.
+Octave also tells us, which in- and output arguments this function has.
 
-To load the data from our CSV file into MATLAB, type the following
-command into the MATLAB shell, and press `Enter`:
+To load the data from our CSV file into Octave, type the following
+command into the Octave shell, and press `Enter`:
 
 ~~~
 csvread('inflammation-01.csv')
@@ -115,7 +115,7 @@ csvread('inflammation-01.csv')
 You should see a wall of numbers on the screen---these are the values
 from the CSV file.
 It can sometimes
-be useful to see the output from MATLAB commands, but it is often not.
+be useful to see the output from Octave commands, but it is often not.
 To suppress the
 output, simply put a semicolon at the end of your command:
 
@@ -242,7 +242,7 @@ patient_data = csvread('inflammation-01.csv');
 ~~~
 {: .matlab}
 
-MATLAB provides a command
+Octave provides a command
 to list all variables that have been assigned data.
 
 ~~~
@@ -257,7 +257,7 @@ patient_data  weight_kg  weight_lb
 ~~~
 {: .output}
 
-To remove a variable from MATLAB, use the `clear` command:
+To remove a variable from Octave, use the `clear` command:
 
 ~~~
 clear weight_lb
@@ -312,7 +312,7 @@ The output tells us that the variable `patient_data`
 refers to a table of values
 that has 60 rows and 40 columns.
 
-MATLAB stores *all* data in the form of multi-dimensional arrays. For example:
+Octave stores *all* data in the form of multi-dimensional arrays. For example:
 
 * Numbers, or *scalars* are represented as two dimensional arrays with only one row and one column, as are single characters. 
 * Lists of numbers, or *vectors* are two dimensional as well, but with the value of dimension being equal to one. By default vectors are row vectors, meaning they have one row and as many columns as there are elements in the vector.
@@ -320,8 +320,8 @@ MATLAB stores *all* data in the form of multi-dimensional arrays. For example:
 * Even character strings, like sentences, are stored as an "array
 of characters".
 
-Normally, MATLAB arrays can't store elements of different data types. For
-instance, a MATLAB array can't store both a `float` and a `char`. To do that,
+Normally, Octave arrays can't store elements of different data types. For
+instance, a Octave array can't store both a `float` and a `char`. To do that,
 you have to use a [Cell Array](http://www.mathworks.com/help/matlab/cell-arrays.html).
 
 We can use the `class` function to find out what kind of data lives
@@ -339,8 +339,8 @@ ans = double
 
 This output tells us that `patient_data` refers to an array of
 double precision floating-point numbers. This is the default numeric
-data type in MATLAB. If you want to store other numeric data types,
-you need to tell MATLAB explicitly. For example, the command,
+data type in Octave. If you want to store other numeric data types,
+you need to tell Octave explicitly. For example, the command,
 
 ~~~
 x = int16(325);
@@ -550,7 +550,7 @@ ans =
 
 Now that we know how to access data we want to compute with,
 we're ready to analyze `patient_data`.
-MATLAB knows how to perform common mathematical operations on arrays.
+Octave knows how to perform common mathematical operations on arrays.
 If we want to find the average inflammation for all patients on all days,
 we can just ask for the mean of the array:
 
@@ -570,7 +570,7 @@ of mean values. The expression `patient_data(:)` *flattens* the table into a
 one-dimensional array.
 
 To get details about what a function, like `mean`,
-does and how to use it, use MATLAB's `help` command.
+does and how to use it, use Octave's `help` command.
 
 ~~~
 help mean
@@ -664,7 +664,7 @@ axis:
 
 ![Operations Across Axes](../fig/matlab-operations-across-axes.svg)
 
-To support this, MATLAB allows us to specify the *dimension* we
+To support this, Octave allows us to specify the *dimension* we
 want to work on. If we ask for the average across the dimension 1,
 we get:
 
@@ -790,7 +790,7 @@ The mathematician Richard Hamming once said,
 "The purpose of computing is insight, not numbers," and the best
 way to develop insight is often to visualize data. Visualization
 deserves an entire lecture (or course) of its own, but we can
-explore a few features of MATLAB here.
+explore a few features of Octave here.
 
 Let's display a heat map of our data:
 
