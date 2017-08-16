@@ -20,7 +20,7 @@ Remember, code that is repeated in two or more places
 will eventually be wrong in at least one.
 Also, if we  make changes in the way we analyze our datasets,
 we have to introduce that change in every copy of our code.
-To avoid all of this repetition, we have to teach MATLAB to
+To avoid all of this repetition, we have to teach Octave to
 repeat our commands,
 and to do *that*,
 we have to learn how to write *loops*.
@@ -151,7 +151,7 @@ it's not the best way to write our loop:
   `word`.
 
 Fortunately,
-MATLAB provides us with a convenient function to
+Octave provides us with a convenient function to
 write a better loop:
 
 ~~~
@@ -206,7 +206,7 @@ and `len` is 1,
 so `len` is updated to 2.
 After three more updates,
 `len` is 5;
-since there's nothing left in `aeiou` for MATLAB to process,
+since there's nothing left in `aeiou` for Octave to process,
 the loop finishes and the `disp` statement tells us our final answer.
 
 Note that a loop variable is just a variable
@@ -226,7 +226,7 @@ u
 
 > ## Performing Exponentiation
 >
-> MATLAB uses the caret (`^`) to perform exponentiation:
+> Octave uses the caret (`^`) to perform exponentiation:
 >
 > ~~~
 > disp(5^3)
@@ -339,7 +339,7 @@ inflammation-12.csv
 
 This is close, but not quite right.
 The `sprintf` function is useful when we want to
-generate MATLAB strings based on a _template_.
+generate Octave strings based on a _template_.
 In our case,
 that template is the string `inflammation-%d.csv`.
 `sprintf`
@@ -350,7 +350,7 @@ the data referred to by our second argument, `i`.
 Again, let's trace the execution of our loop:
 in the beginning of our loop,
 `i` starts by referring to the value 1.
-So, when MATLAB executes the command
+So, when Octave executes the command
 
 ~~~
 file_name = sprintf('inflammation-%d.csv', idx);
@@ -482,7 +482,7 @@ function could be re-used to check all our future data files.
 > ~~~
 > {: .bash}
 >
-> We can also do something similar with MATLAB, using the `dir` command:
+> We can also do something similar with Octave, using the `dir` command:
 >
 > ~~~
 > files = dir('*.csv')
@@ -503,7 +503,7 @@ function could be re-used to check all our future data files.
 > ~~~
 > {: .output}
 >
-> The `dir` command returns a special MATLAB data type called
+> The `dir` command returns a special Octave data type called
 > a "struct array". Each element in this array is
 > a "struct", containing information about a single file
 > in the form of "fields".
