@@ -20,7 +20,7 @@ the same things, regardless of what data they're given.
 We want programs to make choices based on the values
 they are manipulating.
 
-The tool that MATLAB gives us for doing this is called
+The tool that Octave gives us for doing this is called
 a [conditional statement](../reference/index.html#conditional-statement),
 and it looks like this:
 
@@ -43,7 +43,7 @@ done
 ~~~
 {: .output}
 
-The second line of this code uses the keyword `if` to tell MATLAB
+The second line of this code uses the keyword `if` to tell Octave
 that we want to make a choice. If the test that follows is true,
 the body of the `if` (i.e., the lines between `if` and `else`) are
 executed. If the test is false, the body of the `else` (i.e.,
@@ -51,7 +51,7 @@ the lines between `else` and `end`) are executed instead. Only one
 or the other is ever executed.
 
 Conditional statements don't have to have an `else` block. If there
-isn't one, MATLAB simply doesn't do anything if the test is false:
+isn't one, Octave simply doesn't do anything if the test is false:
 
 ~~~
 num = 53;
@@ -133,7 +133,7 @@ In this case, "either" means "either or both", not
 > ## True and False Statements
 >
 > `1` and `0` aren't the only values
-> in MATLAB that are true or false. In fact, *any* value
+> in Octave that are true or false. In fact, *any* value
 > can be used in an `if` or `elseif`. After reading and
 > running the code below, explain what the rule is for
 > which values that are considered true and which are
@@ -281,7 +281,7 @@ de
 > changing the order of the loops, then rewrite the code to test
 > your hypothesis.
 >
-> 2. MATLAB (and most other languges in the C family) provides
+> 2. Octave (and most other languges in the C family) provides
 > [in-place operators](../reference/index.html#in-place-operator) that
 > work like this:
 >
