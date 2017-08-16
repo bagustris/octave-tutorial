@@ -54,14 +54,14 @@ function definition line is called the *body* of the
 function. The keyword `end` marks the end of the function body, and the
 function won't know about any code after `end`.
 
-Just as we saw with scripts, functions must be _visible_ to MATLAB, i.e.,
+Just as we saw with scripts, functions must be _visible_ to Octave, i.e.,
 a file containing a function has to be placed in a directory that
-MATLAB knows  about. The most convenient of those directories is the
+Octave knows  about. The most convenient of those directories is the
 current working directory.
 
 > ## GNU Octave - Matlab compatibility
 >
-> In common with MATLAB, Octave searches the current working directory and
+> In common with Octave, Octave searches the current working directory and
 > the path for functions called from the command line.
 {: .callout}
 
